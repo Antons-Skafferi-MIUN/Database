@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Lunch information</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <table border="1">
+            <td><a href="lunchInfo.html">Lunch info</a></td>
+            <td><a href="./AllLunches">All lunches</a></td>
+        </table>
+        <br />
+        
+        <form action="./LunchServlet" method="POST">
+            <table>
+                <tr>
+                    <td>Lunch ID:</td>
+                    <td><input type="text" name="id" value=""/></td>
+                </tr>
+                <tr>
+                    <td>Name:</td>
+                    <td><input type="text" name="name" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Week:</td>
+                    <td><input type="text" name="week" value="" /></td>
+                </tr>
+                <tr>
+                    <td>Day:</td>
+                    <td><input type="text" name="day" value="" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" name="operation" value="Add" />
+                        <input type="submit" name="operation" value="Edit" />
+                        <input type="submit" name="operation" value="Delete" />
+                        <input type="submit" name="operation" value="Search" /></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
