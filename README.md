@@ -1,18 +1,5 @@
-# Database 
-
-## Tables
-* Lunch menu
-* Dinner menu
-* Events
-* Schedule
-* Personell
-* Orders
-* Table booking
-* Table
-* Drinks(maybe not?)
-
-## API
-* Webpage ska konsumera API:et
-* Mobile app ska konsumera API:et
-* Admin webpage ska uppdatera/modifiera API:et
-* Protect admin web page against unauth access (example a customer that is on the guest wifi sharing the IP)
+# Webbappen with CRUD-functionality for lunches
+ It needs a proper setting of database restaurantDB with table lunches in order to execute the program.
+  
+## Setting Up the Database in Glassfish
+  https://docs.oracle.com/cd/E18930_01/html/821-2416/ggkon.html
