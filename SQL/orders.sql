@@ -1,6 +1,0 @@
-CREATE TABLE IF NOT EXISTS orders (
-	order_id INT(11) NOT NULL AUTO_INCREMENT,
-	order_price INT(11) NULL DEFAULT NULL,
-	order_date DATETIME NULL DEFAULT NULL,
-	PRIMARY KEY (order_id)
-);
