@@ -82,7 +82,13 @@ CREATE TABLE IF NOT EXISTS order_changes(
 --
 -- Create table order_rows
 --
-CREATE TABLE IF NOT EXISTS order_rows(order_row_id INTEGER NOT NULL);
+CREATE TABLE IF NOT EXISTS order_rows(
+  order_row_id INTEGER NOT NULL,
+  order_id INTEGER NOT NULL,
+  food_id INTEGER,
+  drink_id INTEGER,
+  order_change_id INTEGER
+);
 --
 -- Create table personnel
 --
