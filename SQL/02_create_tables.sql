@@ -54,7 +54,8 @@ CREATE TABLE IF NOT EXISTS reservations(
   reservation_id INTEGER NOT NULL,
   reservation_name VARCHAR(255),
   reservation_date DATETIME NOT NULL,
-  customer_phone VARCHAR(15)
+  customer_phone VARCHAR(15),
+  table_id INTEGER NOT NULL
 );
 --
 -- Create table restaurant_tables
