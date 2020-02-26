@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS lunches(
 --
 CREATE TABLE IF NOT EXISTS orders (
   order_id INT(11) NOT NULL,
-  order_price INT(11) NOT NULL,
   order_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
   table_id INTEGER NOT NULL
 );
@@ -53,8 +52,8 @@ CREATE TABLE IF NOT EXISTS orders (
 CREATE TABLE IF NOT EXISTS reservations(
   reservation_id INTEGER NOT NULL,
   reservation_name VARCHAR(255),
-  reservation_date DATETIME NOT NULL,
-  customer_phone VARCHAR(15),
+  reservation_date DATE NOT NULL,
+  reservation_phone VARCHAR(15) NOT NULL,
   table_id INTEGER NOT NULL
 );
 --
@@ -73,14 +72,6 @@ CREATE TABLE IF NOT EXISTS restaurant_tables(
   )
 );
 --
--- Create table order_changes
---
-CREATE TABLE IF NOT EXISTS order_changes(
-  order_change_id INTEGER NOT NULL,
-  order_change_made VARCHAR(255),
-  order_change_order_row_id INTEGER
-);
---
 -- Create table order_rows
 --
 CREATE TABLE IF NOT EXISTS order_rows(
@@ -88,16 +79,16 @@ CREATE TABLE IF NOT EXISTS order_rows(
   order_id INTEGER NOT NULL,
   food_id INTEGER,
   drink_id INTEGER,
-  order_change_id INTEGER
+  order_change VARCHAR(1000)
 );
 --
 -- Create table personnel
 --
 CREATE TABLE IF NOT EXISTS personnel (
-  personnel_id INT(10) NOT NULL,
+  personnel_id INT(5) NOT NULL,
   personnel_name VARCHAR(100) NOT NULL,
   personnel_phone VARCHAR(50) NOT NULL,
-  personnel_type ENUM('kök', 'restaurang') NOT NULL
+  personnel_type ENUM('kitchen', 'restaurant') NOT NULL
 );
 --
 -- Create table shifts
@@ -105,6 +96,6 @@ CREATE TABLE IF NOT EXISTS personnel (
 CREATE TABLE IF NOT EXISTS shifts (
   shift_id INT NOT NULL,
   shift_date DATE NOT NULL,
-  shift_personnel INT(10),
-  personnel_id INT(10) NOT NULL
+  shift_type ENUM("day", "evening"),
+  personnel_id INT(5) NOT NULL
 );

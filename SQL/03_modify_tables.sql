@@ -49,16 +49,12 @@ ALTER TABLE restaurant_tables
 ADD
   CONSTRAINT restaurant_table_PK PRIMARY KEY(table_id);
 --------------------------------------------------------
-ALTER TABLE order_changes
-ADD
-  CONSTRAINT order_change_PK PRIMARY KEY(order_change_id);
-ALTER TABLE order_changes
-MODIFY
-  COLUMN order_change_id INT AUTO_INCREMENT;
---------------------------------------------------------
 ALTER TABLE personnel
 ADD
   CONSTRAINT personnel_PK PRIMARY KEY(personnel_id);
+ALTER TABLE personnel
+MODIFY
+  COLUMN personnel_id INT AUTO_INCREMENT;
 --------------------------------------------------------
 ALTER TABLE shifts
 ADD
@@ -66,6 +62,13 @@ ADD
 ALTER TABLE shifts
 MODIFY
   COLUMN shift_id INT AUTO_INCREMENT;
+--------------------------------------------------------
+ALTER TABLE order_rows
+ADD
+  CONSTRAINT order_row_PK PRIMARY KEY(order_row_id);
+ALTER TABLE order_rows
+MODIFY
+  COLUMN order_row_id INT AUTO_INCREMENT;
 --------------------------------------------------------
   -- 2. set all foreign keys in the tables.
   --------------------------------------------------------
@@ -83,7 +86,10 @@ ADD
 --------------------------------------------------------------------
 ALTER TABLE order_rows
 ADD
-  CONSTRAINT order_row_order_FK FOREIGN KEY(order_id) REFERENCES orders(order_id),
-  CONSTRAINT order_row_food_FK FOREIGN KEY(food_id) REFERENCES foods(food_id),
-  CONSTRAINT order_row_drink_FK FOREIGN KEY(drink_id) REFERENCES drinks(drink_id),
-  CONSTRAINT order_row_order_change_FK FOREIGN KEY(order_change_id) REFERENCES order_changes(order_change_id);
+  CONSTRAINT order_row_order_FK FOREIGN KEY(order_id) REFERENCES orders(order_id);
+ALTER TABLE order_rows
+ADD
+  CONSTRAINT order_row_food_FK FOREIGN KEY(food_id) REFERENCES foods(food_id);
+ALTER TABLE order_rows
+ADD
+  CONSTRAINT order_row_drink_FK FOREIGN KEY(drink_id) REFERENCES drinks(drink_id);
