@@ -1,10 +1,11 @@
 --
--- This is the sql file needed to create
+-- This is the sql file needed to drop and create
 -- all tables in the database.
 --
 --
 -- Create table drinks
 --
+DROP TABLE IF EXISTS drinks;
 CREATE TABLE IF NOT EXISTS drinks (
   drink_id INT(11),
   drink_name VARCHAR(75) NOT NULL,
@@ -15,6 +16,7 @@ CREATE TABLE IF NOT EXISTS drinks (
 --
 -- Create table events
 --
+DROP TABLE IF EXISTS events;
 CREATE TABLE IF NOT EXISTS events (
   event_id INT NOT NULL,
   event_name VARCHAR(100) NOT NULL,
@@ -23,6 +25,7 @@ CREATE TABLE IF NOT EXISTS events (
 --
 -- Create table foods
 --
+DROP TABLE IF EXISTS foods;
 CREATE TABLE IF NOT EXISTS foods (
   food_id INT(11) NOT NULL,
   food_name VARCHAR(255) NOT NULL,
@@ -32,6 +35,7 @@ CREATE TABLE IF NOT EXISTS foods (
 --
 -- Create table lunches
 --
+DROP TABLE IF EXISTS lunches;
 CREATE TABLE IF NOT EXISTS lunches(
   lunch_id INTEGER NOT NULL,
   lunch_name VARCHAR(255) NOT NULL,
@@ -41,6 +45,7 @@ CREATE TABLE IF NOT EXISTS lunches(
 --
 -- Create table orders
 --
+DROP TABLE IF EXISTS orders;
 CREATE TABLE IF NOT EXISTS orders (
   order_id INT(11) NOT NULL,
   order_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
@@ -49,6 +54,7 @@ CREATE TABLE IF NOT EXISTS orders (
 --
 -- Create table reservations
 --
+DROP TABLE IF EXISTS reservations;
 CREATE TABLE IF NOT EXISTS reservations(
   reservation_id INTEGER NOT NULL,
   reservation_name VARCHAR(255),
@@ -59,6 +65,7 @@ CREATE TABLE IF NOT EXISTS reservations(
 --
 -- Create table restaurant_tables
 --
+DROP TABLE IF EXISTS restaurant_tables;
 CREATE TABLE IF NOT EXISTS restaurant_tables(
   table_id INTEGER NOT NULL,
   table_total_seats INTEGER,
@@ -74,6 +81,7 @@ CREATE TABLE IF NOT EXISTS restaurant_tables(
 --
 -- Create table order_rows
 --
+DROP TABLE IF EXISTS order_rows;
 CREATE TABLE IF NOT EXISTS order_rows(
   order_row_id INTEGER NOT NULL,
   order_id INTEGER NOT NULL,
@@ -84,6 +92,7 @@ CREATE TABLE IF NOT EXISTS order_rows(
 --
 -- Create table personnel
 --
+DROP TABLE IF EXISTS personnel;
 CREATE TABLE IF NOT EXISTS personnel (
   personnel_id INT(5) NOT NULL,
   personnel_name VARCHAR(100) NOT NULL,
@@ -93,6 +102,7 @@ CREATE TABLE IF NOT EXISTS personnel (
 --
 -- Create table shifts
 --
+DROP TABLE IF EXISTS shifts;
 CREATE TABLE IF NOT EXISTS shifts (
   shift_id INT NOT NULL,
   shift_date DATE NOT NULL,
