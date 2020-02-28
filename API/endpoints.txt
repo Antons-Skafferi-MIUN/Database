@@ -1,5 +1,5 @@
-Exlanation of Anton API
-=======================
+Explanation of Anton API
+========================
 
 ----------------------------------------------------------------------
 These endpoints exist in the Anton API
