@@ -82,7 +82,7 @@ CREATE TABLE order_changes(
   constraint order_changes_pk PRIMARY KEY (order_change_id)
 );
 
-CREATE TABLE order_rows(order_row_id INTEGER NOT NULL);
+CREATE TABLE order_rows(order_row_id INTEGER NOT NULL, constraint order_rows_pk PRIMARY KEY (order_row_id));
 
 CREATE TABLE personnel (
   personnel_id INT NOT NULL,
