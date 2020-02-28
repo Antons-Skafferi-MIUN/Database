@@ -1,0 +1,120 @@
+Exlanation of Anton API
+=======================
+
+----------------------------------------------------------------------
+These endpoints exist in the Anton API
+PRE_URL = http://10.250.121.124:8080/antonapi/webresources/
+POST_URL = [
+  entities.events
+  entities.orderrows
+  entities.restauranttables
+  entities.drinks
+  entities.lunches
+  entities.shifts
+  entities.orders
+  entities.personnel
+  entities.reservations
+  entities.foods
+]
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+These type of requests are possible to make
+GET     -   Get all posts from endpoint
+GET     -   Get single post from endpoint
+POST    -   Create new post to endpoint
+---------------(PUT     -   Update single post to endpoint)---------------
+DELETE  -   Delete post to endpoint
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+Example of a GET request to foods endpoint (getting all posts)
+==============================================================
+request
+http://10.250.121.124:8080/antonapi/webresources/entities.foods
+
+response
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<foodss>
+    <foods>
+        <foodCategory>main</foodCategory>
+        <foodId>1</foodId>
+        <foodName>Wallenbergare</foodName>
+        <foodPrice>185</foodPrice>
+    </foods>
+    <foods>
+        <foodCategory>main</foodCategory>
+        <foodId>2</foodId>
+        <foodName>Torskrygg</foodName>
+        <foodPrice>225</foodPrice>
+    </foods>
+</foodss>
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+Example of a GET request to foods endpoint (getting single post with id = 1)
+============================================================================
+request
+http://10.250.121.124:8080/antonapi/webresources/entities.foods/1
+
+response
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<foods>
+    <foodCategory>main</foodCategory>
+    <foodId>1</foodId>
+    <foodName>Wallenbergare</foodName>
+    <foodPrice>185</foodPrice>
+</foods>
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+Example of a POST request to foods endpoint (creating new post)
+===============================================================
+request
+http://10.250.121.124:8080/antonapi/webresources/entities.foods
+
+Headers {
+  'Content-Type': 'application/xml'
+}
+
+Body {
+  <lunches>
+    <lunchDay>4</lunchDay>
+    <lunchName>Kalvsylta</lunchName>
+    <lunchWeek>11</lunchWeek>
+  </lunches>
+}
+
+response
+-- NIL -- (There is no response only 204 No Content)
+----------------------------------------------------------------------
+
+
+----------------------------------------------------------------------
+Example of a PUT request to foods endpoint (updating a post)
+============================================================
+Not sure how to solve this.
+Meanwhile delete post with the ID you want to update, then create
+a new post with the POST-command.
+----------------------------------------------------------------------
+
+
+
+----------------------------------------------------------------------
+Example of a DELETE request to foods endpoint (delete post with id = 15)
+========================================================================
+request
+http://10.250.121.124:8080/antonapi/webresources/entities.foods/15
+
+response
+-- NIL -- (There is no response only 204 No Content)
+----------------------------------------------------------------------
+
