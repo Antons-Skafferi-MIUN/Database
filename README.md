@@ -1,1 +1,1 @@
-# AntonJavaDBAPI with responses for REST POST, PUT, DELETE, GET
+## AntonJavaDB - Restful API service with responses for REST POST, PUT, DELETE
