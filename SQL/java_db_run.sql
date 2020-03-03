@@ -13,7 +13,7 @@ CREATE TABLE drinks (
   drink_price INTEGER NOT NULL
 );
 --
--- Create table events
+-- Create table 
 --
 CREATE TABLE events (
   event_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
@@ -200,11 +200,16 @@ VALUES
 --------------------------------------------------------------------
   -- Insert values into table events
   --------------------------------------------------------------------
-INSERT INTO events (event_name, event_date,event_description,event_price,event_time,event_image)
+-- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_DESCRIPTION VARCHAR(100);
+-- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_PRICE INTEGER DEFAULT 0 NOT NULL;
+-- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_TIME CHAR(5);
+-- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_IMAGE VARCHAR(100);
+
+INSERT INTO events (event_name, event_date,event_image)
 VALUES
-  ('Co-Pilots', '2020-03-24','THIS IS SOME MUSIC SHIT',500,'13:00','pilots'),
-  ('Lärarseminarium', '2020-03-27','Teachers talking about stuff',100,'14:00','teachers'),
-  ('Johansson svensexa', '2020-03-27','PARTYMODE',1000,'15:00','bachelorsparty');
+  ('Co-Pilots', '2020-03-24'),
+  ('Lärarseminarium', '2020-03-27'),
+  ('Johansson svensexa', '2020-03-27');
 --------------------------------------------------------------------
   -- Insert values into table foods
   --------------------------------------------------------------------
@@ -311,9 +316,3 @@ VALUES
   ('2020-03-19', 'evening', 4),
   ('2020-03-20', 'day', 1),
   ('2020-03-20', 'day', 2);
-
-
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_DESCRIPTION VARCHAR(100);
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_PRICE INTEGER DEFAULT 0 NOT NULL;
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_TIME CHAR(5);
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_IMAGE VARCHAR(100);
