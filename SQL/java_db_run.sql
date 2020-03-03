@@ -200,11 +200,11 @@ VALUES
 --------------------------------------------------------------------
   -- Insert values into table events
   --------------------------------------------------------------------
-INSERT INTO events (event_name, event_date)
+INSERT INTO events (event_name, event_date,event_description,event_price)
 VALUES
-  ('Co-Pilots', '2020-03-24'),
-  ('Lärarseminarium', '2020-03-27'),
-  ('Johansson svensexa', '2020-03-27');
+  ('Co-Pilots', '2020-03-24','THIS IS SOME MUSIC SHIT',500),
+  ('Lärarseminarium', '2020-03-27','Teachers talking about stuff',100),
+  ('Johansson svensexa', '2020-03-27','PARTYMODE',1000);
 --------------------------------------------------------------------
   -- Insert values into table foods
   --------------------------------------------------------------------
