@@ -205,7 +205,7 @@ VALUES
 -- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_TIME CHAR(5);
 -- ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_IMAGE VARCHAR(100);
 
-INSERT INTO events (event_name, event_date,event_image)
+INSERT INTO events (event_name, event_date)
 VALUES
   ('Co-Pilots', '2020-03-24'),
   ('Lärarseminarium', '2020-03-27'),
