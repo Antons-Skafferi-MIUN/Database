@@ -11,6 +11,7 @@
 8. Paste in the contents of java_db_run.sql and 04_insert_values.sql 
 9. To connect to the database use the baseURL http://<YOUR LOCAL IP ADDRESS NOT LOCALHOST>:8080/AntonAPI/webresources
   since Java runs on a virtual machine you can't use local host so replace <YOUR LOCAL IP ADDRESS NOT LOCALHOST> with your local ip address should be 192.168.0.... something
+10. in android studio change the BASE_URL in ApiUtils to your new URL.
 
 ## Tables
 * Lunch menu
