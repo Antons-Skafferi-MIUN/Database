@@ -8,7 +8,7 @@
 5. Something similarlly named to "jdbc:derby://localhost:1527/restaurantDB [ on APP]" should appear.
 6. Connect to jdbc:derby://localhost:1527/restaurantDB [ on APP].
 7. Use the second mouse button on jdbc:derby://localhost:1527/restaurantDB [ on APP] and choose "execute command"
-8. Paste in the contents of java_db_run.sql and 04_insert_values.sql 
+8. Paste in the contents of java_db_run.sql and 04_insert_values.sql (these files exist in this repo)
 9. To connect to the database use the baseURL http://<YOUR LOCAL IP ADDRESS NOT LOCALHOST>:8080/AntonAPI/webresources
   since Java runs on a virtual machine you can't use local host so replace <YOUR LOCAL IP ADDRESS NOT LOCALHOST> with your local ip address should be 192.168.0.... something
 10. in android studio change the BASE_URL in ApiUtils to your new URL.
