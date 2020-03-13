@@ -48,6 +48,7 @@ CREATE TABLE orders (
   order_price INT NOT NULL,
   order_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   table_id INTEGER NOT NULL,
+  order_is_done BOOLEAN DEFAULT false,
   constraint orders_pk PRIMARY KEY (order_id)
 );
 
