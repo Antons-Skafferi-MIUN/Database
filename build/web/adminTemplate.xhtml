@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Default Title</ui:insert></title>
+        <h:outputStylesheet library="css" name="admin-index.css"/>
+        <h:outputStylesheet library="css" name="admin-navbar.css"/>
+        <h:outputStylesheet library="css" name="admin-template.css"/>
+        <link type="text/css" rel="stylesheet" href="https://use.typekit.net/pdn3fnm.css"/> 
+
+    </h:head>
+    <h:body>
+        <nav>
+            <h:link outcome="/faces/index.xhtml" class="nav-item" value="Hem"/>
+            <h:link outcome="/faces/admin/lunches.xhtml" class="nav-item" value="Lunch" id="nav-menu"/>
+            <h:link outcome="/faces/admin/foods/List.xhtml" class="nav-item" value="Middag" id="nav-foods"/>
+            <h:link outcome="/faces/admin/drinks/List.xhtml" class="nav-item" value="Dryck" id="nav-drinks"/>
+            <h:link outcome="/faces/admin/events/List.xhtml" class="nav-item" value="Evenemang" id="nav-events"/>
+            <h:link outcome="/faces/admin/shifts/List.xhtml" class="nav-item" value="Schema" id="nav-shifts"/>
+            <h:link outcome="/faces/admin/personnel/List.xhtml" class="nav-item" value="Personal" id="nav-personnel"/>
+            <h:link outcome="/faces/admin/reservations/List.xhtml" class="nav-item" value="Reservation" id="nav-reservation"/>
+        </nav>
+        <header class="header">
+            <div class="header-title-container">
+                <div class="header-title">
+                    <h1>ADMINS</h1>
+                    <h2>SKAFFERI</h2>
+                </div>
+            </div>
+        </header>
+	<main class="wrapper-main-section">
+	    <section class="main-section">
+		<h1>
+		    <ui:insert name="title">Default Title</ui:insert>
+		</h1>
+		<ui:insert name="body">Default Body</ui:insert>
+	    </section>
+	</main>
+    </h:body>
+
+</html>
