@@ -18,7 +18,12 @@ CREATE TABLE drinks (
 CREATE TABLE events (
   event_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
   event_name VARCHAR(100) NOT NULL,
-  event_date VARCHAR(10) NOT NULL
+  event_date DATE NOT NULL,
+  event_description VARCHAR(255),
+  event_price INTEGER DEFAULT 0 NOT NULL,
+  event_time VARCHAR(5),
+  event_image VARCHAR(255),
+  event_editable BOOLEAN DEFAULT FALSE
 );
 --
 -- Create table foods
@@ -44,7 +49,8 @@ CREATE TABLE lunches(
 CREATE TABLE orders (
   order_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
   order_time TIMESTAMP NOT NULL,
-  table_id INTEGER NOT NULL
+  table_id INTEGER NOT NULL,
+  order_is_done BOOLEAN DEFAULT FALSE
 );
 --
 -- Create table reservations
@@ -162,17 +168,6 @@ ALTER TABLE order_rows
 ADD
   CONSTRAINT order_row_drink_FK FOREIGN KEY(drink_id) REFERENCES drinks(drink_id);
 
-
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_DESCRIPTION VARCHAR(100);
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_PRICE INTEGER DEFAULT 0 NOT NULL;
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_TIME CHAR(5);
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_IMAGE VARCHAR(100);
-ALTER TABLE ADMINISTRATOR.EVENTS ADD EVENT_EDITABLE BOOLEAN DEFAULT FALSE;
-ALTER TABLE APP.EVENTS ADD COLUMN EVENTS_DATE_NEW DATE;
-UPDATE APP.EVENTS SET EVENTS_DATE_NEW = EVENTS_DATE;
-ALTER TABLE APP.EVENTS DROP COLUMN EVENTS_DATE;
-RENAME COLUMN APP.EVENTS.EVENTS_DATE_NEW TO EVENTS_DATE;
-
 --------------------------------------------------------------------
 -- Insert values into table drinks
 --------------------------------------------------------------------
@@ -211,7 +206,7 @@ VALUES
 --------------------------------------------------------------------
   -- Insert values into table events
   --------------------------------------------------------------------
-INSERT INTO events (event_name, event_date,event_description,event_price,event_time,event_image)
+INSERT INTO events (event_name,event_date,event_description,event_price,event_time,event_image)
 VALUES
   ('Co-Pilots', '2020-03-24','THIS IS SOME MUSIC SHIT',500,'13:00','pilots'),
   ('Lärarseminarium', '2020-03-27','Teachers talking about stuff',100,'14:00','teachers'),
