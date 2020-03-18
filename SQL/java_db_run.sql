@@ -58,7 +58,7 @@ CREATE TABLE orders (
 CREATE TABLE reservations(
   reservation_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1),
   reservation_name VARCHAR(255),
-  reservation_date DATE NOT NULL,
+  reservation_date TIMESTAMP NOT NULL,
   reservation_phone VARCHAR(15) NOT NULL,
   table_id INTEGER NOT NULL
 );
