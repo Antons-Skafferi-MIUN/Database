@@ -1,0 +1,24 @@
+    @POST
+    @Consumes(value = {MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    @Produces(value = {MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response create2(Lunches entity) {
+        getEntityManager().persist(entity);
+        getEntityManager().flush();
+        return Response.status(201).entity(entity.getLunchName().toString() + " is added with id: " + entity.getLunchId().toString()).build();
+    }
+
+    @PUT
+    @Path("{id}")
+    @Consumes({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response edit(@PathParam("id") Integer id, Lunches entity) {
+        super.edit(entity);
+        return Response.status(200)
+               .entity(entity.getLunchName().toString() + " with id: " + id + " is edited.").build();
+    }
+
+    @DELETE
+    @Path("{id}")
+    public Response remove(@PathParam("id") Integer id) {
+        super.remove(super.find(id));
+        return Response.status(200)
+               .entity("Lunch with id: " + id + " is removed.").build();
