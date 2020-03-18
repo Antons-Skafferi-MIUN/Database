@@ -208,9 +208,12 @@ VALUES
   --------------------------------------------------------------------
 INSERT INTO events (event_name,event_date,event_description,event_price,event_time,event_image)
 VALUES
-  ('Co-Pilots', '2020-03-24','THIS IS SOME MUSIC SHIT',500,'13:00','pilots'),
-  ('Lärarseminarium', '2020-03-27','Teachers talking about stuff',100,'14:00','teachers'),
-  ('Johansson svensexa', '2020-03-27','PARTYMODE',1000,'15:00','bachelorsparty');
+  ('Co-Pilots', '2020-03-24','THIS IS SOME MUSIC SHIT',500,'13:00',
+  'https://scontent-arn2-1.xx.fbcdn.net/v/t31.0-8/p960x960/14711393_1793510927563324_2625279893891674605_o.jpg?_nc_cat=109&_nc_sid=85a577&_nc_ohc=fpuChjvZWz4AX8aTo5o&_nc_ht=scontent-arn2-1.xx&_nc_tp=6&oh=b63f2c37381b1f28ed8918897584ad0e&oe=5E98AF0A'),
+  ('Lärarseminarium', '2020-03-27','Teachers talking about stuff',100,'14:00','
+  http://www.bxtrumanhighschool.com/wp-content/uploads/2018/03/Parent-Teacher-Conferences-01.png'),
+  ('Johansson svensexa', '2020-03-27','PARTYMODE',1000,'15:00','
+  https://img.traveltriangle.com/blog/wp-content/uploads/2019/02/sofia-bachelor-parties-cvr.jpg');
 --------------------------------------------------------------------
   -- Insert values into table foods
   --------------------------------------------------------------------
